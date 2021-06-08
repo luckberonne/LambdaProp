@@ -58,3 +58,11 @@ menor funcion elemento1 elemento2 =  funcion elemento1 < funcion elemento2
 
 ubicadoEn :: [Barrio] -> Requisito
 ubicadoEn barriosInteres depto = any (== barrio depto) barriosInteres
+
+---- b
+
+cumpleRango :: (Depto -> Number) -> Number -> Number -> Requisito
+cumpleRango criterio mayorAx menorAx depto = between mayorAx menorAx (criterio depto)
+
+--3 
+---- a
