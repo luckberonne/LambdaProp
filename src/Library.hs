@@ -66,3 +66,16 @@ cumpleRango criterio mayorAx menorAx depto = between mayorAx menorAx (criterio d
 
 --3 
 ---- a
+
+req = Requisito{
+  ambientes = 1,
+  superficie = 1,
+  precio = 1,
+  barrio = "palermo"
+} deriving (Show, Eq)
+
+cumpleBusqueda :: Depto -> Busqueda -> Bool
+cumpleBusqueda depto busqueda = all ( cumpleRequisito depto) busqueda
+
+cumpleRequisito :: Depto -> Requisito -> Bool
+cumpleRequisito depto requisito = requisito depto 
